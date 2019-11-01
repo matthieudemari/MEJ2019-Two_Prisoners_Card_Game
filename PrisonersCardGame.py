@@ -17,7 +17,7 @@ from tqdm import tqdm
 
 def get_nth_permutation(seq, n):
     
-    # Return the n-th permutation of the array of integer contained in seq
+    # Return the n-th permutation of the array of integer contained in sequence
     seqc= list(seq[:])
     seqn= [seqc.pop()]
     divider= 2 # divider is meant to be len(seqn)+1, just a bit faster
