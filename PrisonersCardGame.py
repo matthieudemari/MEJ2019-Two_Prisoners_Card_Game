@@ -60,12 +60,13 @@ class CardGame():
         # Define seed, if any is given
         max_number_mixes = np.math.factorial(number_of_cards)
         if fixed_seed == None:
-            self.fixed_seed = np.random.randint(1, max_number_mixes)
+            fac = 9/10
+            self.fixed_seed = int(max_number_mixes*fac + np.random.randint(1, 1000))
         else:
             self.fixed_seed = int(fixed_seed)
         error_seed_str = "The seed should be an integer between 1 and {}".format(max_number_mixes)
-        assert self.fixed_seed >= 1 and self.fixed_seed <= max_number_mixes, error_seed_str
-            
+        assert self.fixed_seed >= 1 and self.fixed_seed <= max_number_mixes, error_seed_str 
+        
         # Define cards to be used
         self.define_cards_list()
         
